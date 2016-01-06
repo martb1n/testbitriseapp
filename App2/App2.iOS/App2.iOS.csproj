@@ -15,7 +15,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-	<DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
@@ -26,7 +26,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-	<MtouchSdkVersion>8.3</MtouchSdkVersion>
+    <MtouchSdkVersion>8.3</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -65,7 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
-	<MtouchSdkVersion>8.3</MtouchSdkVersion>
+    <MtouchSdkVersion>8.3</MtouchSdkVersion>
     <Optimize>True</Optimize>
     <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -136,19 +136,13 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon_dev.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\icon_debug.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\ClassLibrary1\ClassLibrary1.csproj">
       <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
       <Name>ClassLibrary1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-    <UsingTask TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+  <UsingTask TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
       <InputFilename ParameterType="System.String" Required="true" />
       <OutputFilename ParameterType="System.String" Required="true" />
@@ -169,7 +163,7 @@
     </Task>
   </UsingTask>
   <Target Name="BeforeBuild">
-    <ReplaceFileText Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' " InputFilename="Info.plist" OutputFilename="Info.plist" MatchExpression="(?&lt;=&lt;string&gt;)(Icon-[a-zA-Z0-9-]*)(?=\.png&lt;/string&gt;)" ReplacementText="$1_test" />
+    <ReplaceFileText Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' " InputFilename="Info.plist" OutputFilename="Info.plist" MatchExpression="(?&lt;=&lt;string&gt;)(Icon-[a-zA-Z0-9-]*)(?=\.png&lt;/string&gt;)" ReplacementText="$1_test" />
     <ReplaceFileText Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' " InputFilename="Info.plist" OutputFilename="Info.plist" MatchExpression="(?&lt;=&lt;string&gt;)(Icon.*)(?=@2x\.png&lt;/string&gt;)" ReplacementText="$1_test" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
