@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\icon_dev.png" />
+    <AndroidResource Include="Resources\Drawable\icon_debug.png" />
   </ItemGroup>
   <Import Project="..\App2\App2.projitems" Label="Shared" Condition="Exists('..\App2\App2.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

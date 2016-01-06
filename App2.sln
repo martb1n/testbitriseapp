@@ -12,6 +12,8 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		App2\App2\App2.projitems*{2d255197-f22a-4b42-9b56-44dfc6efae1c}*SharedItemsImports = 13
+		App2\App2\App2.projitems*{8e5b2051-7b65-4ccb-ba1b-dd1ca61ba896}*SharedItemsImports = 4
+		App2\App2\App2.projitems*{7e044713-1319-4951-94b5-056d1afe7002}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
